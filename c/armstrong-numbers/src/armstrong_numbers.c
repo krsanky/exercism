@@ -3,7 +3,6 @@
 
 #include "armstrong_numbers.h"
 
-/* not used */
 int
 num_digits(int n)
 {
@@ -26,14 +25,10 @@ isArmstrongNumber(int n)
 
 	while (n != 0) {
 		d = n % 10;
-/*
-		printf("i:%d handle %d\n", i, d);
-		printf("%d ^ %d = %d\n", d, num_ds, (int)pow(d,num_ds)); 
-*/
-		sum += (int)pow(d,num_ds); 
+		sum += (int)pow(d, num_ds);
 		n = n / 10;
 		i++;
 	}
-/*	printf("sum:%d\n", sum);*/
+
 	return (nc == sum);
 }
