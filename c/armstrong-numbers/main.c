@@ -5,7 +5,12 @@
 int
 main()
 {
-	int		isa = isArmstrongNumber(123);
-	printf("isa:%d\n", isa);
+	printf("9 isa:%d\n----------\n", isArmstrongNumber(9));
+	printf("10 isa:%d\n----------\n", isArmstrongNumber(10));
+	printf("153 isa:%d\n----------\n", isArmstrongNumber(153));
+
+
+
+
 	return 0;
 }
