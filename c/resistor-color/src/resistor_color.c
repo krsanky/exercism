@@ -8,3 +8,11 @@ colorCode(resistor_band_t c)
 	}
 	return 3;
 }
+
+int *
+colors() 
+{
+	static int arr[] = {1,2,3};
+	return arr;
+}
+
