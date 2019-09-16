@@ -1,7 +1,7 @@
 #include "resistor_color.h"
 
 int
-colorCode(enum COLOR c)
+colorCode(resistor_band_t c)
 {
 	if (c) {
 		return 7;
