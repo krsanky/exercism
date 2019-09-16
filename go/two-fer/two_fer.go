@@ -2,7 +2,6 @@ package twofer
 
 import "fmt"
 
-// ShareWith is pretty obvious.
 func ShareWith(name string) string {
 	if name == "" {
 		name = "you"
