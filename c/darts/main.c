@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include "src/darts.h"
+
 int
 main()
 {
