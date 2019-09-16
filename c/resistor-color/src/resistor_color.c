@@ -9,6 +9,18 @@ colorCode(resistor_band_t c)
 int	       *
 colors()
 {
-	static int	arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-	return arr;
+	static int	cs[] = {
+		BLACK,
+		BROWN,
+		RED,
+		ORANGE,
+		YELLOW,
+		GREEN,
+		BLUE,
+		VIOLET,
+		GREY,
+		WHITE
+	};
+
+	return cs;
 }
