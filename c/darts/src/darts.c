@@ -10,10 +10,9 @@ test1()
 
 
 int
-score(double x, double y)
+score(coordinate_t c)
 {
-	printf("x:%f y:%f\n", x, y);
+	printf("x:%f y:%f\n", c.x, c.y);
 
 	return 12;
 }
-
