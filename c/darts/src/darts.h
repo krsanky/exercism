@@ -1,9 +1,7 @@
 #ifndef DARTS_H
 #define DARTS_H
-// coordinate_t landing_position = {
-	0.0F, 0.0F
-};
-typedef struct coord {
+
+typedef struct {
 	double		x;
 	double		y;
 }		coordinate_t;
