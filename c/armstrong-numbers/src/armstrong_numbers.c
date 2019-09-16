@@ -17,7 +17,6 @@ num_digits(int n)
 int
 isArmstrongNumber(int n)
 {
-	int		i = 1;
 	int		d;
 	int		sum = 0;
 	int		nc = n;
@@ -27,7 +26,6 @@ isArmstrongNumber(int n)
 		d = n % 10;
 		sum += (int)pow(d, num_ds);
 		n = n / 10;
-		i++;
 	}
 
 	return (nc == sum);
