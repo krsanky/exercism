@@ -1,33 +1,28 @@
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <ctype.h>
-#include <assert.h>
 
 #include "isogram.h"
 
 bool
 is_isogram(const char *phrase)
 {
-	int		length;
-	int		i;
-/*	int		letter_counts[26];*/
-	char	*phr;
+	unsigned long		i;
+	int		letter_counts[26] = {0}; 
+	char	u;
 
-	length = strlen(phrase);
-	assert((phr = malloc(length+1)) != NULL);
-
-	for (i=0; i<length; i++) {
-		printf("[%d]", phrase[i]);
-		phr[i] = toupper(phrase[i]);
-	}
-	printf("\n");
-	printf("phr:%s\n", phr);
-
-	if (length > 100)
+	if (phrase == NULL)
+		return 0;
+	if (strlen(phrase) == 0)
 		return 1;
+	for (i = 0; i < strlen(phrase); i++) {
+		u = toupper(phrase[i]);
+		if ((u >= 65) && (u <= 90)) {
+			if (letter_counts[u - 65] > 0) 
+				return 0;
+			letter_counts[u - 65]++;
+		}
+	}
 
-	printf("A:%d Z:%d\n", 'A', 'Z');
-	free(phr);
-	return 0;
+	return 1;
 }

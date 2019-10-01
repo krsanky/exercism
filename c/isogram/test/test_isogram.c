@@ -17,31 +17,26 @@ static void test_empty_string(void)
 
 static void test_null(void)
 {
-   TEST_IGNORE();               // delete this line to run test
    TEST_ASSERT_FALSE(is_isogram(NULL));
 }
 
 static void test_lower_case_only(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_TRUE(is_isogram("isogram"));
 }
 
 static void test_duplicated_letter(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_FALSE(is_isogram("eleven"));
 }
 
 static void test_duplicated_letter_from_end_of_alphabet(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_FALSE(is_isogram("zzyzx"));
 }
 
 static void test_longest_known_isogram(void)
 {
-   TEST_IGNORE();
    TEST_ASSERT_TRUE(is_isogram("subdermatoglyphic"));
 }
 
