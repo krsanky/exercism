@@ -7,6 +7,10 @@ import (
 )
 
 func main() {
-	fmt.Printf("hw\n")
-	_, _ = hamming.Distance("abc", "bbc")
+	fmt.Printf("hm\n")
+	i, err := hamming.Distance("", "qwe")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("i:%d\n", i)
 }
