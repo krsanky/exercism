@@ -27,8 +27,11 @@ memcheck: test/*.c src/*.c src/*.h
 	@echo "Memory check passed"
 
 clean:
-	rm -rf *.o *.out *.out.dSYM
+	rm -rf *.o *.out *.out.dSYM main 
 
 tests.out: test/*.c src/*.c src/*.h
 	@echo Compiling $@
 	@$(CC) $(CFLAGS) src/*.c test/vendor/unity.c test/*.c -o tests.out $(LIBS)
+
+main: $@.c src/*.c src/*.h
+	$(CC) $(CFLAGS) main.c src/*.c -o $@ $(LIBS)
