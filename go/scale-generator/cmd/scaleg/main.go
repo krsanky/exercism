@@ -3,14 +3,14 @@ package main
 import (
 	"fmt"
 
-	"github.com/krsanky/exercism/go/hamming"
+	"github.com/krsanky/exercism/go/scale-generator"
 )
 
 func main() {
-	fmt.Printf("hm\n")
-	i, err := hamming.ScaleGTest()
-	if err != nil {
-		panic(err)
+	sarr := scale.Scale("tonic", "interval")
+	fmt.Printf("scaleg\n")
+
+	for _, s := range sarr {
+		fmt.Printf("s:%s\n", s)
 	}
-	fmt.Printf("i:%d\n", i)
 }
