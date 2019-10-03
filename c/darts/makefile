@@ -27,7 +27,7 @@ memcheck: test/*.c src/*.c src/*.h
 	@echo "Memory check passed"
 
 clean:
-	rm -rf *.o *.out *.out.dSYM main
+	rm -rf *.o *.out *.out.dSYM main *.BAK
 
 tests.out: test/*.c src/*.c src/*.h
 	@echo Compiling $@
