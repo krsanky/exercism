@@ -41,7 +41,7 @@ word_count(const char *input_text, word_count_word_t * words)
 	/* && nwords <= MAX_WORDS */
 		if ((idx = word_index(found, words, nwords)) == -1) {
 			strlcpy(words[nwords].text, found, MAX_WORD_LENGTH + 1);
-			words[nwords].count = 0;
+			words[nwords].count = 1;
 			nwords++;
 		} else {
 			words[idx].count++;
