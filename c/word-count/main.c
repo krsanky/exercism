@@ -5,8 +5,8 @@
 int
 main() {
 	int		i;
-	char	in[] = "asdasdasd";
-	word_count_word_t *words = NULL;
+	char	in[] = "asdasdasd qwe 123 qwe sdf";
+	word_count_word_t words[MAX_WORDS];
 
 	printf("main\n----------\n");
 
