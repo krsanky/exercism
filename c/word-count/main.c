@@ -4,14 +4,17 @@
 
 int
 main() {
-	int		i;
-	char	in[] = "asdasdasd qwe 123 qwe sdf";
+	int		nwords, i;
+	//char	in[] = "asdasdasd qwe 123 qwe sdf";
+	char	in[] = "word";
 	word_count_word_t words[MAX_WORDS];
 
-	printf("main\n----------\n");
 
-	i = word_count(in, words);
-	printf("i:%d\n", i);
+	nwords = word_count(in, words);
+	printf("uniques:%d\n", nwords);	
+	for (i=0; i<nwords; i++) {
+		printf("word text:%s count:%d\n", words[i].text, words[i].count);
+	}
 
 	return 0;
 }
