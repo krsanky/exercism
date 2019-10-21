@@ -24,6 +24,16 @@ word_index(char *word, word_count_word_t * words, int nwords)
 	return -1;
 }
 
+void
+zero_words(word_count_word_t * words)
+{
+	int	i = 0;
+	for (i=0; i<MAX_WORDS; i++) {
+		words[i].count = 0;
+		words[i].text[0] = '\0';
+	}
+}
+
 int
 word_count(const char *input_text, word_count_word_t * words)
 {
@@ -32,18 +42,22 @@ word_count(const char *input_text, word_count_word_t * words)
 	char           *found;
 	char           *in;
 
+	zero_words(words);
 	in = strdup(input_text);
 	assert(in != NULL);
 
 	l = sizeof(words);
 
-	while ((found = strsep(&in, " ")) != NULL) {
+	while ((found = strsep(&in, " ,\n")) != NULL) {
 	/* && nwords <= MAX_WORDS */
+//		printf("word_count found:%s\n", found);
 		if ((idx = word_index(found, words, nwords)) == -1) {
 			strlcpy(words[nwords].text, found, MAX_WORD_LENGTH + 1);
 			words[nwords].count = 1;
+//			printf("set 1 count foundr:%s\n", words[nwords].text);
 			nwords++;
-		} else {
+		} else if (strcmp(found, "") != 0) {
+//			printf("word_count ++i idx:%d %s\n", idx, words[idx].text);
 			words[idx].count++;
 		}
 	}

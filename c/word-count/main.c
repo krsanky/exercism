@@ -5,9 +5,11 @@
 int
 main() {
 	int		nwords, i;
-	//char	in[] = "asdasdasd qwe 123 qwe sdf";
-	char	in[] = "word";
+	//char	in[] = "asdasdasdr,qwer,123r,qwer,sdf";
+	char	*in = "one,two,three";
+	//char	in[] = "word";
 	word_count_word_t words[MAX_WORDS];
+	zero_words(words);
 
 
 	nwords = word_count(in, words);
