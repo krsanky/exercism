@@ -30,7 +30,8 @@ void
 clean_word(char *w)
 {
 	char           *t, *t_orig;
-	int 		i        , l, lt, tidx = 0;
+	int 		tidx = 0;
+	int 		i        , l, lt;
 
 	l = strlen(w);
 	t = malloc(l + 1);
@@ -47,18 +48,12 @@ clean_word(char *w)
 
 	/* strip outer quotes */
 	lt = strlen(t);
-	if ((t[0] == '\'') && (t[lt-1] == '\'')) {
-/*		printf("in quotes:%s", t);*/
+	if ((t[0] == '\'') && (t[lt - 1] == '\'')) {
 		t[0] = '\0';
-		t[l-1] = '\0';
+		t[l - 1] = '\0';
 		t++;
-/*		printf(" ?:%s\n", t);*/
-	} else {
-/*		printf("NOT in quotes\n");*/
 	}
-
-	strlcpy(w, t, l+1);
-
+	strlcpy(w, t, l + 1);
 	free(t_orig);
 }
 
@@ -79,10 +74,8 @@ word_count(const char *input_text, word_count_word_t * words)
 	l = sizeof(words);
 
 	while ((found = strsep(&in, " ,\n")) != NULL) {
-		/* 'found' can be modified as long as it's not longer
-		 * It is freed when 'in' is freed.
-		 */
-		clean_word(found); 
+		/* 'found' can be modified carefully */
+		clean_word(found);
 		if (strcmp("", found) == 0)
 			continue;
 		if (strlen(found) > MAX_WORD_LENGTH) {
