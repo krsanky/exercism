@@ -6,12 +6,5 @@
 uint16_t
 color_code(resistor_band_t bands[])
 {
-/*
-   uint16_t actual = color_code((resistor_band_t[]){ BROWN, BLACK });
-   TEST_ASSERT_EQUAL_UINT16(10, actual);
-*/
-	
-	printf("sizeof bands:%lu\n", sizeof(&bands));
-	return 0;
+	return (uint16_t)bands[0] * 10 + (uint16_t)bands[1];
 }
-
