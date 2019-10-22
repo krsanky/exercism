@@ -5,7 +5,7 @@ import "fmt"
 func Distance(a, b string) (int, error) {
 	ar, br := []rune(a), []rune(b)
 	if len(ar) != len(br) {
-		return 0, fmt.Errorf("len(a) != len(b)")
+		return 0, fmt.Errorf("a and b lengths differ")
 	}
 
 	var count int = 0
