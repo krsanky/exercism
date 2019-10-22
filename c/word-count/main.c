@@ -13,8 +13,11 @@ main()
 	char           *in = "one,\ntwo,\nthree";
 	char *input_text = "car: carpet as java: javascript!!&@$%^&";
 	char *input_text = "go Go GO Stop stop";
-	*/
 	char *input_text = "Joe can't tell between 'large' and large.";
+	*/
+	char           *input_text =
+	"Look thisisanexcessivelylongwordthatsomeonetypedwithoutusingthespacebar enough";
+
 	word_count_word_t words[MAX_WORDS];
 	zero_words(words);
 

@@ -69,10 +69,11 @@ word_count(const char *input_text, word_count_word_t * words)
 	int 		nwords = 0;
 	unsigned long 	l;
 	char           *found;
-	char           *in;
+	char           *in, *in_orig;
 
 	zero_words(words);
 	in = strdup(input_text);
+	in_orig = in;
 	assert(in != NULL);
 
 	l = sizeof(words);
@@ -84,6 +85,10 @@ word_count(const char *input_text, word_count_word_t * words)
 		clean_word(found); 
 		if (strcmp("", found) == 0)
 			continue;
+		if (strlen(found) > MAX_WORD_LENGTH) {
+			free(in_orig);
+			return -1;
+		}
 		if ((idx = word_index(found, words, nwords)) == -1) {
 			strlcpy(words[nwords].text, found, MAX_WORD_LENGTH + 1);
 			words[nwords++].count = 1;
@@ -92,6 +97,6 @@ word_count(const char *input_text, word_count_word_t * words)
 		}
 	}
 
-	free(in);
+	free(in_orig);
 	return nwords;
 }
