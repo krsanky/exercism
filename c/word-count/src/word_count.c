@@ -29,23 +29,37 @@ zero_words(word_count_word_t * words)
 void
 clean_word(char *w)
 {
-	char           *t;
-	int 		i        , l, tidx = 0;
+	char           *t, *t_orig;
+	int 		i        , l, lt, tidx = 0;
 
 	l = strlen(w);
 	t = malloc(l + 1);
+	t_orig = t;
 	assert(t != NULL);
 	t[0] = '\0';
 
 	for (i = 0; i < l; i++) {
-		if (isalnum(w[i])) {
+		if (isalnum(w[i]) || ('\'' == w[i])) {
 			t[tidx++] = tolower(w[i]);
 			t[tidx] = '\0';
 		}
 	}
+
+	/* strip outer quotes */
+	lt = strlen(t);
+	if ((t[0] == '\'') && (t[lt-1] == '\'')) {
+/*		printf("in quotes:%s", t);*/
+		t[0] = '\0';
+		t[l-1] = '\0';
+		t++;
+/*		printf(" ?:%s\n", t);*/
+	} else {
+/*		printf("NOT in quotes\n");*/
+	}
+
 	strlcpy(w, t, l+1);
 
-	free(t);
+	free(t_orig);
 }
 
 int

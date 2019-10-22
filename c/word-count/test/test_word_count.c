@@ -250,7 +250,7 @@ static void test_word_count_normalize_case(void)
 
 static void test_word_count_with_apostrophes(void)
 {
-   TEST_IGNORE();
+/*   TEST_IGNORE();*/
    int index = 0;
    int actual_word_count;
    char *input_text = "First: don't laugh. Then: don't cry.";
@@ -282,7 +282,7 @@ static void test_word_count_with_apostrophes(void)
 
 static void test_word_count_with_quotation(void)
 {
-   TEST_IGNORE();
+/*   TEST_IGNORE();*/
    int index = 0;
    int actual_word_count;
    char *input_text = "Joe can't tell between 'large' and large.";
