@@ -15,6 +15,7 @@ typedef struct word_count_word {
 
 int word_index(char *, word_count_word_t *, int);
 void zero_words(word_count_word_t *);
+void clean_word(char *);
 
 // word_count - routine to classify the unique words and their frequency in a test input string
 // inputs:
