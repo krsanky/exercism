@@ -39,7 +39,7 @@ clean_word(char *w)
 
 	for (i = 0; i < l; i++) {
 		if (isalnum(w[i])) {
-			t[tidx++] = w[i];
+			t[tidx++] = tolower(w[i]);
 			t[tidx] = '\0';
 		}
 	}
