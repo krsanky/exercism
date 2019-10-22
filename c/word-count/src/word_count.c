@@ -87,9 +87,13 @@ word_count(const char *input_text, word_count_word_t * words)
 			continue;
 		if (strlen(found) > MAX_WORD_LENGTH) {
 			free(in_orig);
-			return -1;
+			return EXCESSIVE_LENGTH_WORD;
 		}
 		if ((idx = word_index(found, words, nwords)) == -1) {
+			if (nwords >= MAX_WORDS) {
+				free(in_orig);
+				return EXCESSIVE_NUMBER_OF_WORDS;
+			}
 			strlcpy(words[nwords].text, found, MAX_WORD_LENGTH + 1);
 			words[nwords++].count = 1;
 		} else if (strcmp(found, "") != 0) {
