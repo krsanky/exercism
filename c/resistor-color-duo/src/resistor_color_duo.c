@@ -6,5 +6,5 @@
 uint16_t
 color_code(resistor_band_t bands[])
 {
-	return (uint16_t)bands[0] * 10 + (uint16_t)bands[1];
+	return (uint16_t) bands[0] * 10 + (uint16_t) bands[1];
 }

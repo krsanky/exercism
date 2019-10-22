@@ -12,7 +12,7 @@ typedef enum {
 	VIOLET,
 	GREY,
 	WHITE
-}		resistor_band_t;
+} 		resistor_band_t;
 
 uint16_t 	color_code(resistor_band_t[]);
 
