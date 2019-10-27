@@ -14,6 +14,10 @@ typedef enum {
 	WHITE
 } 		resistor_band_t;
 
-uint16_t 	color_code(resistor_band_t[]);
+typedef struct {
+	uint16_t value;
+} resistor_value_t;
+
+resistor_value_t 	color_code(resistor_band_t[]);
 
 #endif
