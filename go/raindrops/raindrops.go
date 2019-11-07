@@ -1,6 +1,7 @@
 package raindrops
 
-func Convert(n int) string {
-	return "asd"
-}
+import "fmt"
 
+func Convert(n int) string {
+	return fmt.Sprintf("%d", n)
+}
